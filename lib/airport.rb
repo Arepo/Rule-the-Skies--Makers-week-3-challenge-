@@ -1,23 +1,27 @@
+require_relative 'weather'
+
 class Airport
+
+	include Weather
 
 	def initialize(capacity: 10)
 		@capacity = capacity
 	end
 
-	def planes
+	def hangar
 		@planes ||= []
 	end
 
 	def plane_count
-		planes.count
+		hangar.count
 	end
 
 	def bring_er_in(plane)
-		planes << plane.land unless plane_count >= @capacity
+		hangar << plane.land unless plane_count >= @capacity
 	end
 
-	def boot_plane(plane)
-		planes.delete(plane.take_off)
+	def banish_plane(plane)
+		hangar.delete(plane.take_off) #unless stormy?
 	end
 
 end

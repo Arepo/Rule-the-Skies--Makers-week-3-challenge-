@@ -12,7 +12,7 @@ describe Airport do
 
   context 'plane storage' do
   	it 'starts off with no planes' do
-  		expect(airport.planes).to eq []
+  		expect(airport.hangar).to eq []
   	end
   end
   
@@ -29,36 +29,23 @@ describe Airport do
     
     it 'a plane can take off' do
     	expect(plane).to receive(:take_off)
-    	airport.boot_plane(plane)
+    	airport.banish_plane(plane)
     end
 
     it 'stops being in the airport when it does' do
     	airport.bring_er_in(plane)
-    	airport.boot_plane(plane)
+    	airport.banish_plane(plane)
     	expect(airport.plane_count).to eq 0
     end
   end
   
   context 'traffic control' do
     it 'a plane cannot land if the airport is full' do
-    	10.times { airport.bring_er_in(Plane.new)}
+    	10.times { airport.bring_er_in(Plane.new) }
     	expect(plane).not_to receive(:land)
     	airport.bring_er_in(plane)
     end
     
-    # Include a weather condition using a module.
-    # The weather must be random and only have two states "sunny" or "stormy".
-    # Try and take off a plane, but if the weather is stormy, the plane can not take off and must remain in the airport.
-    # 
-    # This will require stubbing to stop the random return of the weather.
-    # If the airport has a weather condition of stormy,
-    # the plane can not land, and must not be in the airport
-    context 'weather conditions' do
-      it 'a plane cannot take off when there is a storm brewing' do
-      end
-      
-      it 'a plane cannot land in the middle of a storm' do
-      end
-    end
+    
   end
 end
