@@ -41,6 +41,9 @@ describe Airport do
   
   context 'traffic control' do
     it 'a plane cannot land if the airport is full' do
+    	10.times { airport.bring_er_in(Plane.new)}
+    	expect(plane).not_to receive(:land)
+    	airport.bring_er_in(plane)
     end
     
     # Include a weather condition using a module.
