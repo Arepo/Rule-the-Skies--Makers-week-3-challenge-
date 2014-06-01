@@ -11,13 +11,13 @@ class Plane
 	end
 
 	def land
-		@flying = false
+		@flying = false unless stormy?
 		self
 	end
 
 	def take_off
 		@flying = true unless stormy?
-		self
+		self unless @flying == false
 	end
 
 end

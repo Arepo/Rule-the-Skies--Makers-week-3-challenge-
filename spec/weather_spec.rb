@@ -29,14 +29,26 @@ describe Weather do
 			expect(tester).not_to be_stormy
 		end
 
-		it 'a plane cannot take off when there is a storm brewing' do
+		it 'a plane cannot start flying when there is a storm brewing' do
+			srand 1
 			airport.bring_er_in(plane)
 			srand 6
+			airport.banish_plane(plane)
 			expect(plane).not_to be_flying
+	    end
+
+	    it 'a plane cannot leave the hangar when there is a storm brewing' do
+	    	srand 1
+	    	airport.bring_er_in(plane)
+			srand 6
+			expect(airport.plane_count).to eq 1
 			airport.banish_plane(plane)
 	    end
 	      
-	    it 'a plane cannot land in the middle of a storm' do
+	    it 'a plane cannot stop flying in the middle of a storm' do
+	    	srand 6
+	    	airport.bring_er_in(plane)
+	    	expect(plane).to be_flying
 	   	end
     end
 end
