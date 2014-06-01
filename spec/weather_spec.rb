@@ -1,5 +1,4 @@
 require 'weather'
-require 'mocha/setup'
 
 
 class WeatherTest; include Weather; end
@@ -8,6 +7,7 @@ describe Weather do
 
 	let(:plane) { Plane.new }
 	let(:tester) { WeatherTest.new }
+	let(:airport) { Airport.new }
 
 # Include a weather condition using a module.
     # The weather must be random and only have two states "sunny" or "stormy".
@@ -30,10 +30,10 @@ describe Weather do
 		end
 
 		it 'a plane cannot take off when there is a storm brewing' do
-			# airport.bring_er_in(plane)
-			# srand 6
-			# expect(plane).not_to receive(:take_off)
-			# airport.banish_plane(plane)
+			airport.bring_er_in(plane)
+			srand 6
+			expect(plane).not_to be_flying
+			airport.banish_plane(plane)
 	    end
 	      
 	    it 'a plane cannot land in the middle of a storm' do

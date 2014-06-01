@@ -21,7 +21,7 @@ class Airport
 	end
 
 	def banish_plane(plane)
-		hangar.delete(plane.take_off) #unless stormy?
+		hangar.delete(plane.take_off)	
 	end
 
 end

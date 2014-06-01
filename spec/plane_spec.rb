@@ -23,8 +23,9 @@ describe Plane do
 
   # end
   
-  it 'changes its status to flying after taking of' do
+  it 'changes its status to flying after taking off in good weather' do
   	plane.land
+  	srand 1
   	plane.take_off
   	expect(plane).to be_flying
   end

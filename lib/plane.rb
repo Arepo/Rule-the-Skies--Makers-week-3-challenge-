@@ -1,5 +1,7 @@
 class Plane
 
+	include Weather
+
 	def initialize
 		@flying = true
 	end
@@ -14,7 +16,7 @@ class Plane
 	end
 
 	def take_off
-		@flying = true
+		@flying = true unless stormy?
 		self
 	end
 
