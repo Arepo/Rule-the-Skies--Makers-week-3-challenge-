@@ -50,5 +50,11 @@ describe Weather do
 	    	airport.bring_er_in(plane)
 	    	expect(plane).to be_flying
 	   	end
+
+	   	it 'A plane cannot arrive in the hangar in the middle of a storm' do
+	   		srand 6
+	   		airport.bring_er_in(plane)
+	   		expect(airport.plane_count).to eq 0
+	   	end
     end
 end

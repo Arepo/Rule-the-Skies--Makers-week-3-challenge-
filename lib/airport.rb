@@ -17,8 +17,12 @@ class Airport
 		hangar.count
 	end
 
+	def full?
+		plane_count >= @capacity 
+	end
+
 	def bring_er_in(plane)
-		hangar << plane.land unless plane_count >= @capacity
+		(hangar << plane.land).compact! unless full?
 	end
 
 	def banish_plane(plane)
