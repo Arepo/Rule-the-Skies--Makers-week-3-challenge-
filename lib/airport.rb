@@ -25,7 +25,7 @@ class Airport
 		(hangar << plane.land).compact! unless full?
 	end
 
-	def banish_plane(plane)
+	def banish(plane)
 		hangar.delete(plane.take_off)	
 	end
 

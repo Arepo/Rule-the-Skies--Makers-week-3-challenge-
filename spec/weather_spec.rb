@@ -33,7 +33,7 @@ describe Weather do
 			srand 1
 			airport.bring_er_in(plane)
 			srand 6
-			airport.banish_plane(plane)
+			airport.banish(plane)
 			expect(plane.status).to eq "landed"
 	    end
 
@@ -42,7 +42,7 @@ describe Weather do
 	    	airport.bring_er_in(plane)
 			srand 6
 			expect(airport.plane_count).to eq 1
-			airport.banish_plane(plane)
+			airport.banish(plane)
 	    end
 	      
 	    it 'a plane cannot stop flying in the middle of a storm' do

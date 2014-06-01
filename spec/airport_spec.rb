@@ -29,12 +29,12 @@ describe Airport do
     
     it 'a plane can take off' do
     	expect(plane).to receive(:take_off)
-    	airport.banish_plane(plane)
+    	airport.banish(plane)
     end
 
     it 'stops being in the airport when it does' do
     	airport.bring_er_in(plane)
-    	airport.banish_plane(plane)
+    	airport.banish(plane)
     	expect(airport.plane_count).to eq 0
     end
   end
