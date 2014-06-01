@@ -15,12 +15,18 @@ describe Plane do
   end
   
   it 'has a flying status when in the air' do
+  	plane.land
+  	expect(plane).not_to be_flying
   end
   
-  it 'can take off' do
-  end
+  # it 'can take off' do
+
+  # end
   
   it 'changes its status to flying after taking of' do
+  	plane.land
+  	plane.take_off
+  	expect(plane).to be_flying
   end
 end
  
