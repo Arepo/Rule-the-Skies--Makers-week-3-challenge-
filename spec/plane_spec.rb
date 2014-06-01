@@ -11,13 +11,13 @@ describe Plane do
   let(:plane) { Plane.new }
   
   it 'has a flying status when created' do
- 	expect(plane).to be_flying
+ 	expect(plane.status).to eq "flying"
   end
   
   it 'changes its status to not flying when landing in good weather' do
   	srand 1
   	plane.land
-  	expect(plane).not_to be_flying
+  	expect(plane.status).to eq "landed"
   end
   
   # it 'can take off' do
@@ -29,7 +29,7 @@ describe Plane do
   	plane.land
   	srand 1
   	plane.take_off
-  	expect(plane).to be_flying
+  	expect(plane.status).to eq "flying"
   end
 end
  

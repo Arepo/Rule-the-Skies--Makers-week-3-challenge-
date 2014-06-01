@@ -3,21 +3,21 @@ class Plane
 	include Weather
 
 	def initialize
-		@flying = true
+		@status = "flying"
 	end
 
-	def flying?
-		@flying
+	def status
+		@status
 	end
 
 	def land
-		@flying = false unless stormy?
-		self unless @flying == true
+		@status = "landed" unless stormy?
+		self unless @status == "flying"
 	end
 
 	def take_off
-		@flying = true unless stormy?
-		self unless @flying == false
+		@status = "flying" unless stormy?
+		self unless @status == "landed"
 	end
 
 end
