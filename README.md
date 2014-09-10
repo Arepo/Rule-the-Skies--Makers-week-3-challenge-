@@ -1,6 +1,8 @@
 Rule the Skies
 ------
 
+### Background
+
 This was a very simple airport simulator* I made a couple of weeks into the Makers course.
 
 \* By 'simulator' I mean 'set of classes with names and one or two behaviours taken from things you'd find in an airport.
@@ -11,4 +13,6 @@ Six flying planes attempt to land at an airport, randomly being deterred by bad 
 
 I was just getting to grips with OOP at the time, so while I was (at the time) quite pleased with the code, I didn't really know how to tie it together - so the trigger for the whole thing is a messy bunch of untested code.
 
-To see it operating in all its glory, download and run lib/grand_finale.rb
+### Instructions
+
+To see it operating in all its glory, download and from the root file, just run lib/grand_finale.rb
