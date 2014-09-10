@@ -15,4 +15,4 @@ I was just getting to grips with OOP at the time, so while I was (at the time) q
 
 ### Instructions
 
-To see it operating in all its glory, download and from the lib directory, run grand_finale.rb
+To see it operating in all its glory, download and navigate to its lib directory, then enter 'ruby grand_finale.rb'
