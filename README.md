@@ -1,5 +1,14 @@
 Rule the Skies
+------
 
-A simple airport simulator, with plane and airport classes, and occasional bad weather. 
+This was a very simple airport simulator* I made a couple of weeks into the Makers course.
 
-To see it operating in all its glory, run lib/grand_finale.rb
+\* By 'simulator' I mean 'set of classes with names and one or two behaviours taken from things you'd find in an airport.
+
+Running it triggers a one-off set of operations:
+
+Six flying planes attempt to land at an airport, randomly being deterred by bad weather but persisting until they succeed and reporting their success or failure. They then attempt to take off again, facing similar tribulations, and again reporting their successes and failures.
+
+I was just getting to grips with OOP at the time, so while I was (at the time) quite pleased with the code, I didn't really know how to tie it together - so the trigger for the whole thing is a messy bunch of untested code.
+
+To see it operating in all its glory, download and run lib/grand_finale.rb
